@@ -5,7 +5,8 @@ import { MDBTable,MDBTableHead,MDBTableBody,MDBRow,MDBCol,MDBContainer,MDBBtn,MD
 import axios from 'axios';
 import moment from 'moment';
 import { useSelector ,useDispatch} from "react-redux"
-import {increment} from "./actions/index"
+import { increment } from "./actions/index"
+import {decrement} from "./actions/index"
 
 function App() {
 
@@ -15,14 +16,16 @@ function App() {
   const dispatch = useDispatch();
   
 
-      // console.log(dispatch(increment))
+      // console.log(increment.payload)
   return (
    
     <div>
       I am in the component {counter}
 
-      <button onClick = {() => dispatch(increment)}>add</button>
-      <button>Minus</button>
+      <button onClick = {() => dispatch(increment(5))}>add</button>
+      <button onClick = {() => dispatch(decrement())}>Minus</button>
+
+      {isLogged?<h3>Valuable information i should not </h3> : " "}
 </div>
   );
 }

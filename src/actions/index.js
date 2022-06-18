@@ -1,9 +1,22 @@
 
 
 
-export const increment = {
+export const increment = (num) =>{
+  return {
+    type: "INCREMENT",
+    payload:num
+    }
 
-    type:"INCREMENT"
+
+
+}
+
+
+export const decrement = () =>{
+  return {
+        type:"DECREMENT"
+    }
+
 
 
 }
